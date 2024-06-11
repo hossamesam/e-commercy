@@ -23,9 +23,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="en" dir="rtl">
+
       <body className={inter.className}>
         <Header />
-        <PermanentDrawerRight/>
+        <PermanentDrawerRight />
         {children}
         <Footer />
       </body>

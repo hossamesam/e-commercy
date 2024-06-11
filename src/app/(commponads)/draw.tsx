@@ -14,36 +14,27 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-const drawerWidth = 240;
+export const [drawerWidth_xs, drawerWidth_sm, drawerWidth_md, drawerWidth_lg, drawerWidth_xl] = [0, 200, 260, 270, 280];
 
 export default function PermanentDrawerRight() {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{ width: `calc(100% - ${drawerWidth}px)`, mr: `${drawerWidth}px` }}
-      >
-        <Toolbar>
-          <Typography variant="h6" noWrap component="div">
-            Permanent drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
- 
       <Drawer
         sx={{
-          width: drawerWidth,
-          flexShrink: 0,
+          width: { xs: drawerWidth_xs, sm: drawerWidth_sm, md: drawerWidth_md, lg: drawerWidth_lg, xl: drawerWidth_xl },
+          flexShrink: 1,
           '& .MuiDrawer-paper': {
-            width: drawerWidth,
+            width: { xs: drawerWidth_xs, sm: drawerWidth_sm, md: drawerWidth_md, lg: drawerWidth_lg, xl: drawerWidth_xl },
             boxSizing: 'border-box',
           },
         }}
         variant="permanent"
         anchor="right"
       >
-        <Toolbar />
+        <Toolbar>    
+          <Typography variant='h4'>Logo</Typography>
+        </Toolbar>
         <Divider />
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
