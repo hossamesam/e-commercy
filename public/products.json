@@ -5,8 +5,9 @@
     "href": "#",
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
     "imageAlt": "Front of men's Basic Tee in black.",
-    "price": "$35",
-    "color": "Black"
+    "price": " جنيه 143.00",
+    "color": "Black",
+    "description": "تيشرت رجالي بيسيك برقبة دائرية من هيرو"
   },
   {
     "id": 2,
@@ -14,8 +15,9 @@
     "href": "#",
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg",
     "imageAlt": "Front of men's Basic Tee in black.",
-    "price": "$35",
-    "color": "Black"
+    "price": "جنيه 1,350",
+    "color": "Black",
+    "description": "تيشرت سوبر سوفت برسومات شعار للرجال من امريكان ايجل، موديل "
   },
   {
     "id": 1,
@@ -23,8 +25,9 @@
     "href": "#",
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
     "imageAlt": "Front of men's Basic Tee in black.",
-    "price": "$35",
-    "color": "Black"
+    "price": "جنيه 875,00",
+    "color": "Black",
+    "description": "تيشرت هينلي بيسيك ويسترن برقبة بأزرار للرجال من اندورا موديل "
   },
   {
     "id": 2,
@@ -32,8 +35,9 @@
     "href": "#",
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
     "imageAlt": "Front of men's Basic Tee in black.",
-    "price": "$35",
-    "color": "Black"
+    "price": "جنيه1,300",
+    "color": "Black",
+    "description": "تيشرت بولو مرن بقصة ضيقة للرجال من امريكان ايجل"
   },
   {
     "id": 2,
@@ -41,8 +45,9 @@
     "href": "#",
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
     "imageAlt": "Front of men's Basic Tee in black.",
-    "price": "$35",
-    "color": "Black"
+    "price": "جنيه560.00",
+    "color": "Black",
+    "description": "تيشرت بولو بيكيه للرجال من اميريكان ايجل"
   },
   {
     "id": 2,
@@ -50,7 +55,68 @@
     "href": "#",
     "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
     "imageAlt": "Front of men's Basic Tee in black.",
-    "price": "$35",
-    "color": "Black"
+    "price": "جنيه1,300",
+    "color": "Black",
+    "description": "تيشرت سوبر سوفت برسومات شعار للرجال من امريكان ايجل"
+  },
+  {
+    "id": 1,
+    "name": "Basic Tee",
+    "href": "#",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "price": " جنيه 143.00",
+    "color": "Black",
+    "description": "تيشرت رجالي بيسيك برقبة دائرية من هيرو"
+  },
+  {
+    "id": 2,
+    "name": "Basic Tee",
+    "href": "#",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "price": "جنيه 1,350",
+    "color": "Black",
+    "description": "تيشرت سوبر سوفت برسومات شعار للرجال من امريكان ايجل، موديل "
+  },
+  {
+    "id": 1,
+    "name": "Basic Tee",
+    "href": "#",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "price": "جنيه 875,00",
+    "color": "Black",
+    "description": "تيشرت هينلي بيسيك ويسترن برقبة بأزرار للرجال من اندورا موديل "
+  },
+  {
+    "id": 2,
+    "name": "Basic Tee",
+    "href": "#",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "price": "جنيه1,300",
+    "color": "Black",
+    "description": "تيشرت بولو مرن بقصة ضيقة للرجال من امريكان ايجل"
+  },
+  {
+    "id": 2,
+    "name": "Basic Tee",
+    "href": "#",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "price": "جنيه560.00",
+    "color": "Black",
+    "description": "تيشرت بولو بيكيه للرجال من اميريكان ايجل"
+  },
+  {
+    "id": 2,
+    "name": "Basic Tee",
+    "href": "#",
+    "imageSrc": "https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg",
+    "imageAlt": "Front of men's Basic Tee in black.",
+    "price": "جنيه1,300",
+    "color": "Black",
+    "description": "تيشرت سوبر سوفت برسومات شعار للرجال من امريكان ايجل"
   }
 ]

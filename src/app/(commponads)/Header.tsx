@@ -16,10 +16,13 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 // icon shoping ☟☟☟☟☟☟☟☟☟☟☟
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
   '& .MuiBadge-badge': {
-    right: -3,
-    top: 13,
-    border: `2px solid ${theme.palette.background.paper}`,
-    padding: '0 4px',
+    right: -12,
+    top: 25,
+    border: `3px solid rgb(255,50,100)`,
+    width: "26px",
+    height: "26px",
+    borderRadius: "45px",
+
   },
 }));
 // theme header ☟☟☟☟☟☟☟☟☟☟☟☟
@@ -52,26 +55,27 @@ const Search = styled('div')(({ theme }) => ({
   width: '100wv',
   [theme.breakpoints.up('sm')]: {
     marginLeft: theme.spacing(3),
-    width: 'auto',
+    width: '85%',
   },
 }));
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
+  color: 'white',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    paddingLeft: `calc(.5em + ${theme.spacing(2)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '20ch',
+      width: '50vw',
     },
   },
 }));
 const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
+  padding: theme.spacing(0, 1),
   height: '100%',
   position: 'absolute',
+  left: '5px',
   pointerEvents: 'none',
   display: 'flex',
   alignItems: 'center',
@@ -96,17 +100,17 @@ const Header = () => {
         >
           <Toolbar>
             <Search>
-              <SearchIconWrapper>
+              <SearchIconWrapper >
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
+                placeholder="بحث"
+                inputProps={{ 'aria-label': 'بحث' }}
               />
             </Search>
-            <IconButton aria-label="cart">
-              <StyledBadge badgeContent={4} color="secondary">
-                <ShoppingCartIcon />
+            <IconButton aria-label="cart" sx={{ position: "absolute", left: "1%" }}>
+              <StyledBadge badgeContent={1} sx={{ color: "white" }}>
+                <ShoppingCartIcon fontSize="large" sx={{ color: "white" }} />
               </StyledBadge>
             </IconButton>
           </Toolbar>

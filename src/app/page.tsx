@@ -3,17 +3,31 @@ import Tshirt from "./(commponads)/T-shirt"
 import products from "../../public/products.json"
 import PermanentDrawerRight from "./(commponads)/draw";
 import Header from "./(commponads)/Header";
+import { Box } from "@mui/material";
 
 export default async function Home() {
 
   return (
     <main >
+      <Box
+        sx={{
+          mt: "6px",
+          mb: "50px",
+          maxWidth: "200px ",
+          display: "grid",
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "1fr 1fr ",
+            md: "1fr 1fr 1fr",
+            lg: "1fr 1fr 1fr 1fr ",
+            xl: "1fr 1fr 1fr 1fr 1fr 1fr ",
+          },
 
-      <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-3">
+        }} >
         {products.map((product) => (
-          <Tshirt src={product.imageSrc} alt={product.imageAlt} href={product.href} key={product.id} name={product.name} color={product.color} product={product.price} ></Tshirt>
+          <Tshirt src={product.imageSrc} alt={product.imageAlt} href={product.href} key={product.id} name={product.name} color={product.color} price={product.price} description={product.description}></Tshirt>
         ))}
-      </div>
-    </main>
+      </Box>
+    </main >
   );
 }

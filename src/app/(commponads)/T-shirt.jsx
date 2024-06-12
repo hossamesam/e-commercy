@@ -31,19 +31,21 @@ import CircleIcon from "@mui/icons-material/Circle";
 // tooltip <تلميحات الالوان> ☟☟☟☟☟☟☟☟☟☟
 const tooltip = (
   <Stack container gap={0.5} direction="row">
-    <CircleIcon color="error" />
-    <CircleIcon color="error" />
-    <CircleIcon color="error" />
-    <CircleIcon color="error" />
+    <CircleIcon sx={{ color: "black" }} />
+    <CircleIcon sx={{ color: "white" }} />
+    <CircleIcon sx={{ color: "red" }} />
+    <CircleIcon sx={{ color: "silver" }} />
   </Stack>
 );
 
 // jsx☟☟☟☟☟☟☟☟☟☟
-function Tshirt({ src, alt, key, href, name, color, price }) {
+function Tshirt({ src, alt, key, href, name, color, price, description }) {
   return (
     <>
       <Card
+        key={key}
         sx={{
+          maxHeight: "900px",
           width: {
             xs: `calc(100% - ${drawerWidth_xs}px + 210px)`,
             sm: `calc(100% - ${drawerWidth_sm}px + 210px)`,
@@ -62,21 +64,38 @@ function Tshirt({ src, alt, key, href, name, color, price }) {
         }}>
         <Link href={href}>
           <CardActionArea>
-            <CardMedia component="img" height="140" image={src} alt={alt} />
+            <CardMedia
+              component="img"
+              sx={{ height: "220px", objectFit: "cover" }}
+              image={src}
+              alt={alt}
+            />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {name}
               </Typography>
-              <Typography variant="body2" color="text.secondary">
-                Lizards are a widespread group of squamate reptiles, with over
-                6,000 species, ranging across all continents except Antarctica
+              <Typography
+                variant="h5"
+                color="text.secondary"
+                sx={{
+                  height: "140px",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                }}>
+                {description}
               </Typography>
+              <Box>
+                <Typography variant="h5" color="text.secondary">
+                  {price}
+                </Typography>
+                <Tooltip title={tooltip} placement="right">
+                  <IconButton
+                    sx={{ position: "absolute", left: "5px", bottom: "12px" }}>
+                    <ColorLensIcon color="primary" />
+                  </IconButton>
+                </Tooltip>
+              </Box>
             </CardContent>
-            <Tooltip title={tooltip} placement="left">
-              <IconButton>
-                <ColorLensIcon />
-              </IconButton>
-            </Tooltip>
           </CardActionArea>
         </Link>
       </Card>
