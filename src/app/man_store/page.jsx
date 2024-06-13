@@ -10,7 +10,7 @@ export default async function Home() {
     <main>
       <Box
         sx={{
-          mt: "6px",
+          mt: "100px",
           mb: "50px",
           maxWidth: "200px ",
           display: "grid",
@@ -19,7 +19,7 @@ export default async function Home() {
             sm: "1fr 1fr ",
             md: "1fr 1fr 1fr",
             lg: "1fr 1fr 1fr 1fr ",
-            xl: "1fr 1fr 1fr 1fr 1fr 1fr ",
+            xl: "1fr 1fr 1fr 1fr 1fr  ",
           },
         }}>
         {man.map((product) => (

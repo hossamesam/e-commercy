@@ -1,0 +1,21 @@
+.productZoom {
+  /* the coordinate of the zoom */
+  --x: 50%;
+  --y: 50%;
+  /**/
+  transform: scale(var(--zoom));
+  transform-origin: var(--x) var(--y);
+  clip-path: inset(
+    calc((1 - 1/var(--zoom)) * (var(--y)))
+    calc((1 - 1/var(--zoom)) * (100% - var(--x)))
+    calc((1 - 1/var(--zoom)) * (100% - var(--y)))
+    calc((1 - 1/var(--zoom)) * (var(--x)))
+  );
+  width:1000px;
+  cursor: pointer;
+}
+
+.productZoom:hover {
+  --zoom:2; /* control the zoom level */
+}
+

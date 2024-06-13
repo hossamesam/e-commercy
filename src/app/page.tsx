@@ -11,17 +11,17 @@ export default async function Home() {
     <main >
       <Box
         sx={{
-          mt: "6px",
+          mt: "100px",
           mb: "50px",
-          maxWidth: "200px ",
           display: "grid",
           gridTemplateColumns: {
-            xs: "1fr",
+            xs: "1fr 1fr ",
             sm: "1fr 1fr ",
             md: "1fr 1fr 1fr",
             lg: "1fr 1fr 1fr 1fr ",
-            xl: "1fr 1fr 1fr 1fr 1fr 1fr ",
+            xl: "1fr 1fr 1fr 1fr 1fr  ",
           },
+
 
         }} >
         {products.map((product) => (

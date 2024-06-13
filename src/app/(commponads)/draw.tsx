@@ -21,6 +21,8 @@ import manIcon from '../../../public/icons/manIcon.svg';
 import shoseIcon from '../../../public/icons/shoseIcon.svg';
 import underwear from '../../../public/icons/underwear.svg';
 import womanIcon from '../../../public/icons/womanIcon.svg';
+import { Slider } from '@mui/material';
+import SliderMinimumDistance from './slid';
 
 export const [drawerWidth_xs, drawerWidth_sm, drawerWidth_md, drawerWidth_lg, drawerWidth_xl] = [0, 200, 260, 270, 280];
 
@@ -31,6 +33,7 @@ const drawtitle = [
   { "title": 'ملابس داخلية', "icon": underwear, "link": "/underwear_store" },
   { "title": 'احذية', "icon": shoseIcon, "link": "/shoses_store" }
 ]
+
 
 export default function PermanentDrawerRight() {
   return (
@@ -69,6 +72,12 @@ export default function PermanentDrawerRight() {
           ))}
         </List>
         <Divider />
+
+        <Box sx={{ width: "100%", justifyContent: "center", alignItems: "center", display: "flex" }}>
+          <SliderMinimumDistance />
+        </Box>
+
+
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem key={text} disablePadding>

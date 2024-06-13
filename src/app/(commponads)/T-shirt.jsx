@@ -60,7 +60,7 @@ function Tshirt({ src, alt, key, href, name, color, price, description }) {
             lg: `calc(${drawerWidth_lg}px + 30px)`,
             xl: `calc(${drawerWidth_xl}px + 30px)`,
           },
-          mt: "100px",
+          mt: "30px",
         }}>
         <Link href={href}>
           <CardActionArea>
