@@ -24,14 +24,17 @@ const SliderMinimumDistance = () => {
 
 
   return (
-    <Box sx={{ width: "80%", justifyContent: "center", alignItems: "center", display: "flex" }}>
+    <Box sx={{ width: "80%", m: "28px 0 10px", justifyContent: "center", flexDirection: "column", alignItems: "center", display: "flex" }}>
       <Slider
-        sx={{ color: "rgb(255, 50, 100)" }}
-        disableSwap
+        sx={{
+          color: "rgb(255, 50, 100)",
+        }}
+        dir="rtl"
         value={value1}
         onChange={handleChange1}
-        min={50}
         max={5000}
+        min={50}
+
         valueLabelDisplay="on"
         getAriaLabel={() => 'Minimum distance'}
       />
