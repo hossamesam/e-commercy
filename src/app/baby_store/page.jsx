@@ -17,10 +17,11 @@ export default async function Home() {
           gridTemplateColumns: {
             xs: "1fr",
             sm: "1fr 1fr ",
-            md: "1fr 1fr 1fr",
+            md: "1fr 1fr",
             lg: "1fr 1fr 1fr 1fr ",
             xl: "1fr 1fr 1fr 1fr 1fr  ",
           },
+          
         }}>
         {baby.map((product) => (
           <Tshirt

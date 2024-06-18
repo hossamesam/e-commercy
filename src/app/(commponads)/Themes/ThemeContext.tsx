@@ -5,7 +5,7 @@ import { createTheme, useMediaQuery } from "@mui/material";
 const { createContext, useState, useEffect } = require("react");
 export const ThemeContext = createContext();
 
-export default function ThemeContextProvider({children}) {
+export default function ThemeContextProvider({children}: Readonly<{ children: React.ReactNode; }>) {
   const prefersMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   const [mode, setMode] = useState(prefersMode);
