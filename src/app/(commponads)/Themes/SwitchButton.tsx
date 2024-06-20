@@ -60,7 +60,7 @@ export default function SwithchButton() {
   return (
     <FormGroup>
       <FormControlLabel
-        label="dark mode"
+        label=""
         control={<MaterialUISwitch onClick={() => {
           if (mode === "ligt") {
             setmode("dark");
