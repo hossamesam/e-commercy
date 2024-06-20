@@ -2,6 +2,7 @@ import React from 'react'
 import MagnifierImg from '../../(commponads)/magnifier'
 import photo from "../../../../public/baby.json";
 import { Box, Chip, Divider, Fab, Rating, Typography } from '@mui/material';
+import SelectCity from './SelectCity';
 const src = photo.map((e) => e.imageSrc)
 
 function page({ params }: {
@@ -78,7 +79,7 @@ function page({ params }: {
                 <Typography variant='h4' component={"h4"} sx={{ display: "flex", mt: "15px" }}>
                     150 جنيه
                 </Typography>
-
+                <SelectCity/>
                 <Fab
                     variant="extended"
                     size="medium"
