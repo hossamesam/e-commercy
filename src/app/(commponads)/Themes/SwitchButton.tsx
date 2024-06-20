@@ -56,10 +56,11 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 export default function SwithchButton() {
   const [mode, setmode] = React.useState("ligt")
   console.log(mode);
-  
+
   return (
     <FormGroup>
       <FormControlLabel
+        label=""
         control={<MaterialUISwitch onClick={() => {
           if (mode === "ligt") {
             setmode("dark");
