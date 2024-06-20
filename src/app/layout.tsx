@@ -10,6 +10,7 @@ import Footer from "./(commponads)/Footer";
 import PermanentDrawerRight from "./(commponads)/draw";
 
 
+const mode = "dark"
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,10 +26,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" dir="rtl">
 
       <body className={inter.className}>
-        <Header />
-        <PermanentDrawerRight />
-        {children}
-        <Footer />
+          <Header />
+          <PermanentDrawerRight />
+          {children}
+
       </body>
     </html>
   );

@@ -1,63 +1,104 @@
-"use client"
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Box, Button, CardActionArea, CardActions } from '@mui/material';
-import './imgs.css';
-import Image from 'next/image';
-import logo from '../../../../public/logo.png';
+import React from 'react'
+import MagnifierImg from '../../(commponads)/magnifier'
+import photo from "../../../../public/baby.json";
+import { Box, Chip, Divider, Fab, Rating, Typography } from '@mui/material';
+import SelectCity from './SelectCity';
+const src = photo.map((e) => e.imageSrc)
 
+function page({ params }: {
+    params: {
+        product: string
 
+    }
+}) {
+    console.log(src);
 
+    return (
+        <Box sx={{ display: "flex", }}>
+            <MagnifierImg sampleImg={photo[0].imageSrc} />
+            {/* {photo.map((e) => (
+            <MagnifierImg sampleImg={e.imageSrc} />
+            ))} */}
 
-export default function MultiActionAreaCard() {
-  return (
-    <Box sx={{
-      mt: "100px",
-      mr: "300px",
-    }}>
-      <Image src={logo} alt="Italian Trulli"
-        style={{ cursor: "pointer" }}
-        onClick={() => {
-          <div style={{ width: "800px" }}>
-            <Image className='productZoom' src={logo} alt="Italian Trulli" />
-          </div>
+            <Typography variant='h5'
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    margin: "100px 0px auto 0",
+                    padding: "20px 25px 20px 20px",
+                    color: "black",
+                    bgcolor: "white",
+                    lineHeight: "3",
+                    width: "30%"
+                }}>
+                <Typography variant='h3' margin="10px auto 0 auto">
+                    طقم دفاية بيبى شتوى قطيفة
+                </Typography>
+                <Typography variant='h4' component={"h4"} sx={{ display: "flex", mt: "15px" }}>
+                    150 جنيه
+                    <Typography
+                        variant='h4'
+                        component={"h4"}
+                        sx={{
+                            mr: "10px",
+                            color: "GrayText"
+                        }}>
+                        <sub style={{ textDecoration: "line-through 3px" }}>
+                            300 جنيه
+                        </sub>
+                    </Typography>
+                </Typography>
+                الأسعار تشمل ضريبة القيمة المضافة
+                <Rating name="read-only" value={3.8} readOnly sx={{ fontSize: "40px", mb: "20px" }} />
+                <Divider />
+                <Typography variant="h5" margin={"15px 0"} color="initial">
+                    الحجم : 6 شهور
+                    <br />
+                    اللون :
+                </Typography>
+                <Divider />
+                <Typography variant='h3' margin="15px auto 0 auto" > تفاصيل المنتج</Typography>
+                تركيبة المواد100% قطيفة
+                تعليمات العنايةHand Wash Only
+                نوع السحّابPull On
+            </Typography>
 
-        }
-        }
-      />
-      <br />
-      <br />
-      <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Italian Trulli"
-        onMouseMove={(e) => {
-          return (
-            <div style={{ width: "800px" }}>
-              <img className='productZoom' src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Italian Trulli"
-                onMouseMove={() => {
-                  e.currentTarget.style.setProperty('--x', (100 * e.clientX / e.currentTarget.offsetWidth) + '%');
-                  e.currentTarget.style.setProperty('--y', (100 * e.clientY / e.currentTarget.offsetHeight) + '%');
-                }} />
-            </div>
-          )
-        }}
-      />
-      <Card sx={{ maxWidth: 300 }}>
-        <CardActionArea>
-          <CardMedia
-            className='productZoom'
-            onMouseMove={(e) => {
-              e.currentTarget.style.setProperty('--x', (100 * e.clientX / e.currentTarget.offsetWidth) + '%');
-              e.currentTarget.style.setProperty('--y', (100 * e.clientY / e.currentTarget.offsetHeight) + '%');
-            }}
-            component="img"
-            image="https://www.babylina.store/wp-content/uploads/2023/06/%D9%85%D9%84%D8%A7%D8%A8%D8%B3-%D8%A7%D8%B7%D9%81%D8%A7%D9%84-%D8%A7%D9%88%D9%84%D8%A7%D8%AF-%D9%82%D9%85%D9%8A%D8%B5-%D9%88%D8%B4%D9%88%D8%B1%D8%AA-%D8%B7%D9%82%D9%85-%D9%85%D8%B3%D8%AA%D9%88%D8%B1%D8%AF-%D9%85%D9%86-%D8%A8%D9%8A%D8%A8%D9%8A-%D9%84%D9%8A%D9%86%D8%A7-BABYLINA-2023-K119-baby-clothes.jpg"
-            alt="green iguana"
-          />
-        </CardActionArea>
-      </Card>
-    </Box>
-  );
+            <Box
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    margin: "100px 0px auto 0",
+                    padding: "20px",
+                    border: "2px solid black",
+                    color: "black",
+                    bgcolor: "white",
+                    lineHeight: "3",
+                    width: "20%",
+                    mr: "2%",
+                }}>
+                <Typography variant='h4' component={"h4"} sx={{ display: "flex", mt: "15px" }}>
+                    150 جنيه
+                </Typography>
+                <SelectCity/>
+                <Fab
+                    variant="extended"
+                    size="medium"
+                    color="primary"
+                    sx={{ mt: "10px" }}
+                >
+                    أضف إلي العربة
+                </Fab>
+                <Fab
+                    variant="extended"
+                    size="medium"
+                    color="primary"
+                    sx={{ mt: "10px" }}
+                >
+                    اشترٍ الآن
+                </Fab>
+            </Box>
+        </Box>
+    )
 }
 
+export default page

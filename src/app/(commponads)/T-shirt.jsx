@@ -54,12 +54,13 @@ function Tshirt({ src, alt, key, href, name, color, price, description }) {
             xl: `calc(100% - ${drawerWidth_xl}px + 210px)`,
           },
           mr: {
-            xs: `calc(${drawerWidth_xs}px + 30px)`,
+            xs: `calc(${drawerWidth_xs}px - 100px)`,
             sm: `calc(${drawerWidth_sm}px + 30px)`,
             md: `calc(${drawerWidth_md}px + 30px)`,
             lg: `calc(${drawerWidth_lg}px + 30px)`,
             xl: `calc(${drawerWidth_xl}px + 30px)`,
           },
+
           mt: "30px",
         }}>
         <Link href={href}>

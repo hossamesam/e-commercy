@@ -23,8 +23,13 @@ import underwear from '../../../public/icons/underwear.svg';
 import womanIcon from '../../../public/icons/womanIcon.svg';
 import { Slider } from '@mui/material';
 import SliderMinimumDistance from './slid';
+import SwithchButton from './Themes/SwitchButton';
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 
 export const [drawerWidth_xs, drawerWidth_sm, drawerWidth_md, drawerWidth_lg, drawerWidth_xl] = [0, 200, 260, 270, 280];
+
+
 
 const drawtitle = [
   { "title": 'ملابس اطفال', "icon": babyIcon, "link": "/baby_store" },
@@ -36,8 +41,11 @@ const drawtitle = [
 
 
 export default function PermanentDrawerRight() {
+  /////////////////////////mode////////////////
+  
+  
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', direction: "ltr" }}>
       <CssBaseline />
       <Drawer
         sx={{
@@ -60,37 +68,32 @@ export default function PermanentDrawerRight() {
         <List>
           {drawtitle.map((text, index) => (
             <Link key={index} href={text.link}>
-              <ListItem key={index} disablePadding>
+              <ListItem key={index} disablePadding  >
                 <ListItemButton>
                   <ListItemIcon>
                     <Image width={28} height={28} src={text.icon} alt={text.title} />
                   </ListItemIcon>
-                  <ListItemText primary={text.title} />
+                  <ListItemText content='h1' sx={{ textAlign: "right" }} primary={text.title} />
                 </ListItemButton>
               </ListItem>
             </Link>
           ))}
         </List>
         <Divider />
-
+        <Typography variant="h5" color="initial" sx={{ fontWeight: "bolder", justifyContent: "center", alignItems: "center", display: "flex", mt: "10px" }}>السعر</Typography>
         <Box sx={{ width: "100%", justifyContent: "center", alignItems: "center", display: "flex" }}>
           <SliderMinimumDistance />
         </Box>
-
-
+        <Divider />
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
+          <ListItem>
+            <SwithchButton />
+            <ListItemText sx={{ textAlign: "right" }} primary={"المظهر"} />
+          </ListItem>
         </List>
+
+       
       </Drawer>
     </Box>
-  );
+  )
 }
