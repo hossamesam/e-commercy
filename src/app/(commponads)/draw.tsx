@@ -42,8 +42,8 @@ const drawtitle = [
 
 export default function PermanentDrawerRight() {
   /////////////////////////mode////////////////
-  
-  
+
+
   return (
     <Box sx={{ display: 'flex', direction: "ltr" }}>
       <CssBaseline />
@@ -67,11 +67,11 @@ export default function PermanentDrawerRight() {
         <Divider />
         <List>
           {drawtitle.map((text, index) => (
-            <Link key={index} href={text.link}>
-              <ListItem key={index} disablePadding  >
+            <Link key={index} href={text.link} >
+              <ListItem key={index} disablePadding   >
                 <ListItemButton>
                   <ListItemIcon>
-                    <Image width={28} height={28} src={text.icon} alt={text.title} />
+                    <Image width={30} height={30} src={text.icon} alt={text.title} />
                   </ListItemIcon>
                   <ListItemText content='h1' sx={{ textAlign: "right" }} primary={text.title} />
                 </ListItemButton>
@@ -92,7 +92,7 @@ export default function PermanentDrawerRight() {
           </ListItem>
         </List>
 
-       
+
       </Drawer>
     </Box>
   )
