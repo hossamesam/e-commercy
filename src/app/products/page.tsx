@@ -1,8 +1,8 @@
 import React from 'react'
-import MagnifierImg from '../../(commponads)/magnifier'
-import photo from "../../../../public/baby.json";
+import MagnifierImg from '../(commponads)/magnifier'
+import photo from "../../../public/baby.json";
 import { Box, Chip, Divider, Fab, Rating, Typography } from '@mui/material';
-import SelectCity from '../../(commponads)/SelectCity';
+import SelectCity from '../(commponads)/SelectCity';
 const src = photo.map((e) => e.imageSrc)
 
 function page({ params }: {
