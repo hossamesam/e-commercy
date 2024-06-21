@@ -116,14 +116,14 @@ const Header = () => {
           </Toolbar>
 
           <Toolbar  >
-            <Link href="/ref" className="m-4">
-              <Button variant="contained" size="medium" color='secondary'>ref</Button>
+            <Link href="/#" className="m-4">
+              <Button variant="contained" size="medium" color='secondary'>منتجات مضافة حديثة</Button>
             </Link>
-            <Link href="/products" className="m-4">
-              <Button variant="contained" size="medium" color='secondary'>product</Button>
+            <Link href="/#" className="m-4">
+              <Button variant="contained" size="medium" color='secondary'>عروض</Button>
             </Link>
-            <Link href="/" className="m-4">
-              <Button variant="contained" size="medium" color='secondary'>Home</Button>
+            <Link href="/#" className="m-4">
+              <Button variant="contained" size="medium" color='secondary'>اكسسوارت</Button>
             </Link>
 
           </Toolbar>
