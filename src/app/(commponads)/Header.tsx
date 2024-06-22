@@ -87,13 +87,13 @@ const Header = () => {
   return (
     <ThemeProvider theme={theme}>
       <Box style={{
-        height: "40px", width: "100vw", display: "flex", justifyContent: "center", alignItems: "center", padding: "25px"
+        display: "flex", justifyContent: "center", alignItems: "center"
       }} >
         <CssBaseline />
         <AppBar
           color='primary'
-          position="fixed"
           sx={{
+            position: "static",
             width: { xs: `calc(100% - ${drawerWidth_xs}px)`, sm: `calc(100% - ${drawerWidth_sm}px)`, md: `calc(100% - ${drawerWidth_md}px)`, lg: `calc(100% - ${drawerWidth_lg}px)`, xl: `calc(100% - ${drawerWidth_xl}px)` },
             mr: { xs: `${drawerWidth_xs}px`, sm: `${drawerWidth_sm}px`, md: `${drawerWidth_md}px`, lg: `${drawerWidth_lg}px`, xl: `${drawerWidth_xl}px` }, zIndex: 1000
           }}
