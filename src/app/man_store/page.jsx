@@ -4,15 +4,20 @@ import man from "../../../public/man.json";
 import PermanentDrawerRight from "../(commponads)/draw";
 import Header from "../(commponads)/Header";
 import { Box } from "@mui/material";
-
+import {
+  drawerWidth_xs,
+  drawerWidth_sm,
+  drawerWidth_md,
+  drawerWidth_lg,
+  drawerWidth_xl,
+} from "../(commponads)/draw";
 export default async function Home() {
   return (
     <main>
       <Box
         sx={{
-          mt: "100px",
+          mt: "0",
           mb: "50px",
-          maxWidth: "200px ",
           display: "grid",
           gridTemplateColumns: {
             xs: "1fr",
@@ -20,6 +25,13 @@ export default async function Home() {
             md: "1fr 1fr 1fr",
             lg: "1fr 1fr 1fr 1fr ",
             xl: "1fr 1fr 1fr 1fr 1fr  ",
+          },
+          mr: {
+            xs: `calc(${drawerWidth_xs}px + 30px)`,
+            sm: `calc(${drawerWidth_sm}px + 30px)`,
+            md: `calc(${drawerWidth_md}px + 30px)`,
+            lg: `calc(${drawerWidth_lg}px + 30px)`,
+            xl: `calc(${drawerWidth_xl}px + 30px)`,
           },
         }}>
         {man.map((product) => (

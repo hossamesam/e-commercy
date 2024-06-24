@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link'
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
@@ -12,6 +12,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SearchIcon from '@mui/icons-material/Search';
 import Badge, { BadgeProps } from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import MenuIcon from '@mui/icons-material/Menu';
+import { WidthFull } from '@mui/icons-material';
 
 // icon shoping ☟☟☟☟☟☟☟☟☟☟☟
 const StyledBadge = styled(Badge)<BadgeProps>(({ theme }) => ({
@@ -42,6 +44,21 @@ const theme = createTheme({
     },
   },
 });
+
+// DrawerHeader ☟☟☟☟☟☟☟☟☟☟☟☟
+const DrawerHeader = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  padding: theme.spacing(0, 1),
+
+
+
+  // necessary for content to be below app bar
+  ...theme.mixins.toolbar,
+  justifyContent: 'flex-start',
+}));
+
+
 // theme Search ☟☟☟☟☟☟☟☟☟☟
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -82,23 +99,47 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   justifyContent: 'center',
 }));
 
+
 // jsx ☟☟☟☟☟☟☟☟☟☟
 const Header = () => {
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <Box style={{
-        display: "flex", justifyContent: "center", alignItems: "center"
-      }} >
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%"
+      }}>
         <CssBaseline />
         <AppBar
           color='primary'
           sx={{
             position: "static",
-            width: { xs: `calc(100% - ${drawerWidth_xs}px)`, sm: `calc(100% - ${drawerWidth_sm}px)`, md: `calc(100% - ${drawerWidth_md}px)`, lg: `calc(100% - ${drawerWidth_lg}px)`, xl: `calc(100% - ${drawerWidth_xl}px)` },
-            mr: { xs: `${drawerWidth_xs}px`, sm: `${drawerWidth_sm}px`, md: `${drawerWidth_md}px`, lg: `${drawerWidth_lg}px`, xl: `${drawerWidth_xl}px` }, zIndex: 1000
+            width: { xs: `calc(100% - ${drawerWidth_xs}px)`, sm: `calc(100% - ${drawerWidth_sm}px)`, md: `calc(100% - ${drawerWidth_md}px)`, lg: `calc(100% - ${drawerWidth_lg}px)`, xl: `calc(100vw - ${drawerWidth_xl}px)` },
+            mr: { xs: `${drawerWidth_xs}px`, sm: `${drawerWidth_sm}px`, md: `${drawerWidth_md}px`, lg: `${drawerWidth_lg}px`, xl: `${drawerWidth_xl}px` }, zIndex: 1000,
           }}
         >
           <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="end"
+              onClick={handleDrawerOpen}
+              sx={{ ...(open && { display: 'none' }) }}
+            >
+              <MenuIcon />
+            </IconButton>
             <Search>
               <SearchIconWrapper >
                 <SearchIcon />
@@ -125,8 +166,8 @@ const Header = () => {
             <Link href="/#" className="m-4">
               <Button variant="contained" size="medium" color='secondary'>اكسسوارت</Button>
             </Link>
-
           </Toolbar>
+
         </AppBar>
       </Box >
     </ThemeProvider>

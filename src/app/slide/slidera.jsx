@@ -63,7 +63,7 @@ const Slidera = ({
       <div className="wrapper" style={{ backgroundColor: bgColor, }}>
         {((showArrowControls && !loop && active !== 0) ||
           (showArrowControls && loop)) && (
-          <div className="leftClick" onClick={leftClickHandle}>
+          <div className="leftClick" onClick={rightClickHandle}>
             <div className="twice">
               <Image className="button c1" src={backButton} alt="back" />
               <Image className="button" src={backButton} alt="back" />
@@ -81,7 +81,7 @@ const Slidera = ({
         />
         {((showArrowControls && !loop && active !== imageList.length - 1) ||
           (showArrowControls && loop)) && (
-          <div className="rightClick" onClick={rightClickHandle}>
+          <div className="rightClick" onClick={leftClickHandle}>
             <Image className="button c2" src={nextButton} alt="next" />
             <Image className="button" src={nextButton} alt="next" />
           </div>

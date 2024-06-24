@@ -3,6 +3,14 @@ import MagnifierImg from '../(commponads)/magnifier'
 import photo from "../../../public/baby.json";
 import { Box, Chip, Divider, Fab, Rating, Typography } from '@mui/material';
 import SelectCity from '../(commponads)/SelectCity';
+import {
+    drawerWidth_xs,
+    drawerWidth_sm,
+    drawerWidth_md,
+    drawerWidth_lg,
+    drawerWidth_xl,
+} from "../(commponads)/draw";
+
 const src = photo.map((e) => e.imageSrc)
 
 function page({ params }: {
@@ -14,20 +22,74 @@ function page({ params }: {
     console.log(src);
 
     return (
-        <Box sx={{ display: "flex", }}>
-            <MagnifierImg sampleImg={photo[0].imageSrc} />
+        <Box sx={{
+            display: "flex", mt: "100px"
+        }}>
+            <Box sx={{
+                display: "flex",
+                flexDirection: "column",
+                mr: {
+                    xs: `calc(${drawerWidth_xs}px + 30px)`,
+                    sm: `calc(${drawerWidth_sm}px + 30px)`,
+                    md: `calc(${drawerWidth_md}px + 30px)`,
+                    lg: `calc(${drawerWidth_lg}px + 30px)`,
+                    xl: `calc(${drawerWidth_xl}px + 30px)`,
+                },
+            }}>
+                <MagnifierImg sampleImg={photo[0].imageSrc} />
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        margin: "100px 0px auto 0",
+                        padding: "20px",
+                        border: "1px solid rgba(0,0,0,.2)",
+                        boxShadow: "0px 0px 2px #000000",
+                        color: "black",
+                        bgcolor: "white",
+                        maxWidth: "100%",
+                        mr: "2%",
+                        zIndex: "100",
+
+                    }}>
+                    <Typography variant='h4' component={"h4"} sx={{ display: "flex", mt: "15px" }}>
+                        150 جنيه
+                    </Typography>
+                    <SelectCity />
+                    <Fab
+                        variant="extended"
+                        size="medium"
+                        color="primary"
+                        sx={{ mt: "10px" }}
+                    >
+                        أضف إلي العربة
+                    </Fab>
+                    <Fab
+                        variant="extended"
+                        size="medium"
+                        color="primary"
+                        sx={{ mt: "10px" }}
+                    >
+                        اشترٍ الآن
+                    </Fab>
+                </Box>
+            </Box>
+
+
             <Typography variant='h5'
                 sx={{
                     display: "flex",
                     flexDirection: "column",
-                    margin: "100px 0px auto 0",
                     padding: "20px 25px 20px 20px",
                     color: "black",
                     bgcolor: "white",
                     lineHeight: "3",
-                    width: "30%"
+                    maxWidth: "100%",
+                    mr: "8px",
+                    border: "1px solid rgba(0,0,0,.1)",
+                    boxShadow: "0px 0px 2px #000000",
                 }}>
-                <Typography variant='h3' margin="10px auto 0 auto">
+                <Typography variant='h5' margin="10px auto 0 auto">
                     طقم دفاية بيبى شتوى قطيفة
                 </Typography>
                 <Typography variant='h4' component={"h4"} sx={{ display: "flex", mt: "15px" }}>
@@ -59,41 +121,8 @@ function page({ params }: {
                 نوع السحّابPull On
             </Typography>
 
-            <Box
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    margin: "100px 0px auto 0",
-                    padding: "20px",
-                    border: "2px solid black",
-                    color: "black",
-                    bgcolor: "white",
-                    lineHeight: "3",
-                    width: "20%",
-                    mr: "2%",
-                }}>
-                <Typography variant='h4' component={"h4"} sx={{ display: "flex", mt: "15px" }}>
-                    150 جنيه
-                </Typography>
-                <SelectCity />
-                <Fab
-                    variant="extended"
-                    size="medium"
-                    color="primary"
-                    sx={{ mt: "10px" }}
-                >
-                    أضف إلي العربة
-                </Fab>
-                <Fab
-                    variant="extended"
-                    size="medium"
-                    color="primary"
-                    sx={{ mt: "10px" }}
-                >
-                    اشترٍ الآن
-                </Fab>
-            </Box>
-        </Box>
+
+        </Box >
     )
 }
 
