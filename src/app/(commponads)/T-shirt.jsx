@@ -50,11 +50,11 @@ function Tshirt({kind, src, alt, id, href, name, color, price, description }) {
           ml: "2vw",
           mt: "30px",
         }}>
-        <Link href={`/products/${kind}/${id}`}>
+        <Link href={`${kind}/${id}`}>
           <CardActionArea>
             <CardMedia
               component="img"
-              sx={{ height: "220px", objectFit: "cover" }}
+              sx={{ height: "220px", objectFit: "fill" }}
               image={src}
               alt={alt}
             />

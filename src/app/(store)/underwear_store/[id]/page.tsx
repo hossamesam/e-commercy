@@ -1,7 +1,7 @@
+ 
 import React from 'react'
-import MagnifierImg from '../../../(commponads)/magnifier'
-import db_baby from "../../../../../public/baby.json";
-import db_man from "../../../../../public/man.json";
+import MagnifierImg from '../../../../app/(commponads)/magnifier'
+import db_underwear from "../../../../../public/underwear.json";
 import { Box, Chip, Divider, Fab, Rating, Typography } from '@mui/material';
 import SelectCity from '../../../(commponads)/SelectCity';
 import { usePathname } from 'next/navigation'
@@ -13,6 +13,7 @@ import {
   drawerWidth_lg,
   drawerWidth_xl,
 } from "../../../(commponads)/draw";
+
 import { notFound } from 'next/navigation';
 
 interface ShowProductDataType {
@@ -28,7 +29,7 @@ interface ShowProductDataType {
 export default function page(props: ShowProductDataType) {
   // const router = usePathname().split('/')
   // const loc = router[2] == 'man' ? db_man : db_baby
-  const x = db_man.map((e) => {
+  const x = db_underwear.map((e) => {
     // console.log("router[2] " + router[2]);
     // console.log("e.id: " + e.id);
     // console.log("props.params.id: " + props.params.id);

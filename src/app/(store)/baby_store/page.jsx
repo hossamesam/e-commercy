@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Tshirt from "@/app/(commponads)/T-shirt";
 import baby from "@/../public/baby.json";
@@ -11,8 +12,10 @@ import {
   drawerWidth_lg,
   drawerWidth_xl,
 } from "../../(commponads)/draw";
+import { usePathname } from "next/navigation";
 
-export default async function Home() {
+export default function Home() {
+  const router = usePathname();
   return (
     <main>
       <Box
@@ -36,20 +39,17 @@ export default async function Home() {
           },
         }}>
         {baby.map((product) => (
-            <Tshirt
-              src={product.imageSrc}
-              alt={product.imageAlt}
-              href={product.href}
-              key={product.id}
-              id={product.id}
-              name={product.name}
-              color={product.color}
-              price={product.price}
-              description={product.description}
-              kind={product.kind}
-              >
-                
-              </Tshirt>
+          <Tshirt
+            src={product.imageSrc}
+            alt={product.imageAlt}
+            href={product.href}
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            color={product.color}
+            price={product.price}
+            description={product.description}
+            kind={router}></Tshirt>
         ))}
       </Box>
     </main>

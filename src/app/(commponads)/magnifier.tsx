@@ -1,9 +1,7 @@
-// Import dependencies
 'use client'
 import React, {
     MouseEvent, useEffect, useState,
 } from 'react';
-import sampleImg from '../../../public/Banners/photo1.jpg';
 import Image from 'next/image';
 import { Box, CardMedia } from '@mui/material';
 

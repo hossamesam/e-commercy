@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Tshirt from "@/app/(commponads)/T-shirt";
 import man from "@/../public/man.json";
@@ -11,8 +13,12 @@ import {
   drawerWidth_lg,
   drawerWidth_xl,
 } from "../../(commponads)/draw";
+import { usePathname } from "next/navigation";
 import { KingBed } from "@mui/icons-material";
-export default async function Home() {
+
+export default  function Home() {
+  const router = usePathname();
+
   return (
     <main>
       <Box
@@ -46,7 +52,7 @@ export default async function Home() {
             color={product.color}
             price={product.price}
             description={product.description}
-            kind={product.kind}></Tshirt>
+            kind={router}></Tshirt>
         ))}
       </Box>
     </main>

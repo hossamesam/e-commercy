@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Tshirt from "@/app/(commponads)/T-shirt";
 import underwear from "@/../public/underwear.json";
@@ -11,7 +13,11 @@ import {
   drawerWidth_lg,
   drawerWidth_xl,
 } from "../../(commponads)/draw";
-export default async function Home() {
+import { usePathname } from "next/navigation";
+
+export default  function Home() {
+  const router = usePathname();
+
   return (
     <main>
       <Box
@@ -40,10 +46,12 @@ export default async function Home() {
             alt={product.imageAlt}
             href={product.href}
             key={product.id}
+            id={product.id}
             name={product.name}
             color={product.color}
             price={product.price}
-            description={product.description}></Tshirt>
+            description={product.description}
+            kind={router}></Tshirt>
         ))}
       </Box>
     </main>
