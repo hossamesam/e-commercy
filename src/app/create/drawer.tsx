@@ -13,10 +13,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import logo from '../../../public/logo.png';
+import logo from '/public/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import babyIcon from '../../../public/icons/babyIcon.svg';
+import babyIcon from '@/../../public/icons/babyIcon.svg';
 import manIcon from '../../../public/icons/manIcon.svg';
 import shoseIcon from '../../../public/icons/shoseIcon.svg';
 import underwear from '../../../public/icons/underwear.svg';
@@ -69,7 +69,7 @@ export default function PermanentDrawerRight() {
         variant="permanent"
       >
         <Toolbar sx={{ height: "130px" }}>
-          <Link href="/">
+          <Link href="/"> 
             <Image src={logo} alt='هدومي' style={{ objectFit: "cover", height: "130px" }} />
           </Link>
         </Toolbar>

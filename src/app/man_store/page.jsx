@@ -11,6 +11,7 @@ import {
   drawerWidth_lg,
   drawerWidth_xl,
 } from "../(commponads)/draw";
+import { KingBed } from "@mui/icons-material";
 export default async function Home() {
   return (
     <main>
@@ -40,10 +41,14 @@ export default async function Home() {
             alt={product.imageAlt}
             href={product.href}
             key={product.id}
+            id={product.id}
             name={product.name}
             color={product.color}
             price={product.price}
-            description={product.description}></Tshirt>
+            description={product.description}
+            kind ={product.kind}
+            >
+            </Tshirt>
         ))}
       </Box>
     </main>

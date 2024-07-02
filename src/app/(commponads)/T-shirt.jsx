@@ -39,18 +39,18 @@ const tooltip = (
 );
 
 // jsx☟☟☟☟☟☟☟☟☟☟
-function Tshirt({ src, alt, key, href, name, color, price, description }) {
+function Tshirt({kind, src, alt, id, href, name, color, price, description }) {
   return (
     <>
       <Card
-        key={key}
+        key={id}
         sx={{
           maxHeight: "900px",
           maxWidth: "250px",
           ml: "2vw",
           mt: "30px",
         }}>
-        <Link href={href}>
+        <Link href={`/products/${kind}/${id}`}>
           <CardActionArea>
             <CardMedia
               component="img"

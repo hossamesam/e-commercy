@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Disclosure, DisclosureButton } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from "next/link";
 import { log } from "console";
 import Header from "./(commponads)/Header";
@@ -26,7 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en" dir="rtl">
 
       <body className={inter.className}>
-          <Header />
+          <Header/>
           <PermanentDrawerRight />
           {children}
       </body>

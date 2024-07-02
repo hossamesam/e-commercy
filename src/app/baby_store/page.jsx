@@ -11,6 +11,7 @@ import {
   drawerWidth_lg,
   drawerWidth_xl,
 } from "../(commponads)/draw";
+import Link from "next/link";
 export default async function Home() {
   return (
     <main>
@@ -35,15 +36,20 @@ export default async function Home() {
           },
         }}>
         {baby.map((product) => (
-          <Tshirt
-            src={product.imageSrc}
-            alt={product.imageAlt}
-            href={product.href}
-            key={product.id}
-            name={product.name}
-            color={product.color}
-            price={product.price}
-            description={product.description}></Tshirt>
+            <Tshirt
+              src={product.imageSrc}
+              alt={product.imageAlt}
+              href={product.href}
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              color={product.color}
+              price={product.price}
+              description={product.description}
+              kind={product.kind}
+              >
+                
+              </Tshirt>
         ))}
       </Box>
     </main>
