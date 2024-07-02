@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Tshirt from "../(commponads)/T-shirt";
-import man from "../../../public/man.json";
-import PermanentDrawerRight from "../(commponads)/draw";
-import Header from "../(commponads)/Header";
+import Tshirt from "@/app/(commponads)/T-shirt";
+import underwear from "@/../public/underwear.json";
+import PermanentDrawerRight from "@/app/(commponads)/draw";
+import Header from "@/app/(commponads)/Header";
 import { Box } from "@mui/material";
 import {
   drawerWidth_xs,
@@ -10,8 +10,7 @@ import {
   drawerWidth_md,
   drawerWidth_lg,
   drawerWidth_xl,
-} from "../(commponads)/draw";
-import { KingBed } from "@mui/icons-material";
+} from "../../(commponads)/draw";
 export default async function Home() {
   return (
     <main>
@@ -35,20 +34,16 @@ export default async function Home() {
             xl: `calc(${drawerWidth_xl}px + 30px)`,
           },
         }}>
-        {man.map((product) => (
+        {underwear.map((product) => (
           <Tshirt
             src={product.imageSrc}
             alt={product.imageAlt}
             href={product.href}
             key={product.id}
-            id={product.id}
             name={product.name}
             color={product.color}
             price={product.price}
-            description={product.description}
-            kind ={product.kind}
-            >
-            </Tshirt>
+            description={product.description}></Tshirt>
         ))}
       </Box>
     </main>

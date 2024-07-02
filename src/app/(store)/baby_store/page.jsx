@@ -1,8 +1,8 @@
 import Image from "next/image";
-import Tshirt from "../(commponads)/T-shirt";
-import woman from "../../../public/woman.json";
-import PermanentDrawerRight from "../(commponads)/draw";
-import Header from "../(commponads)/Header";
+import Tshirt from "@/app/(commponads)/T-shirt";
+import baby from "@/../public/baby.json";
+import PermanentDrawerRight from "@/app/(commponads)/draw";
+import Header from "@/app/(commponads)/Header";
 import { Box } from "@mui/material";
 import {
   drawerWidth_xs,
@@ -10,18 +10,18 @@ import {
   drawerWidth_md,
   drawerWidth_lg,
   drawerWidth_xl,
-} from "../(commponads)/draw";
+} from "../../(commponads)/draw";
 
 export default async function Home() {
   return (
     <main>
       <Box
         sx={{
-          mt: "0",
+          mt: "0px",
           mb: "50px",
           display: "grid",
           gridTemplateColumns: {
-            xs: "1fr",
+            xs: "1fr 1fr",
             sm: "1fr 1fr ",
             md: "1fr 1fr 1fr",
             lg: "1fr 1fr 1fr 1fr ",
@@ -35,16 +35,21 @@ export default async function Home() {
             xl: `calc(${drawerWidth_xl}px + 30px)`,
           },
         }}>
-        {woman.map((product) => (
-          <Tshirt
-            src={product.imageSrc}
-            alt={product.imageAlt}
-            href={product.href}
-            key={product.id}
-            name={product.name}
-            color={product.color}
-            price={product.price}
-            description={product.description}></Tshirt>
+        {baby.map((product) => (
+            <Tshirt
+              src={product.imageSrc}
+              alt={product.imageAlt}
+              href={product.href}
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              color={product.color}
+              price={product.price}
+              description={product.description}
+              kind={product.kind}
+              >
+                
+              </Tshirt>
         ))}
       </Box>
     </main>
