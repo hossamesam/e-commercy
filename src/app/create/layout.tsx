@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Link from "next/link";
-import { log } from "console";
-import Header from "./(commponads)/Header";
-import Footer from "./(commponads)/Footer";
-import PermanentDrawerRight from "./(commponads)/draw";
-
+import PermanentDrawerRight from "./drawer";
 
 const mode = "dark"
 const inter = Inter({ subsets: ["latin"] });
@@ -22,11 +16,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="en" dir="rtl">
-
+      <div>ssssssssssssssssss</div>
       <body className={inter.className}>
-          <Header/>
-          <PermanentDrawerRight />
-          {children}
+        <PermanentDrawerRight/>
+        {children}
       </body>
     </html>
   );

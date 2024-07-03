@@ -1,18 +1,10 @@
-// Import dependencies
 'use client'
 import React, {
     MouseEvent, useEffect, useState,
 } from 'react';
-import sampleImg from '../../../public/Banners/photo1.jpg';
 import Image from 'next/image';
 import { Box, CardMedia } from '@mui/material';
-import {
-    drawerWidth_xs,
-    drawerWidth_sm,
-    drawerWidth_md,
-    drawerWidth_lg,
-    drawerWidth_xl,
-} from "../(commponads)/draw";
+
 // Constants for magnifier size and zoom level
 const MAGNIFIER_SIZE = 180;
 const ZOOM_LEVEL = 3;
@@ -56,24 +48,13 @@ const MagnifierImg = ({ sampleImg }: { sampleImg: any }) => {
 
     // Render method
     return (
-        <Box
-            sx={{
-                mr: {
-                    xs: `calc(${drawerWidth_xs}px - 100px)`,
-                    sm: `calc(${drawerWidth_sm}px + 30px)`,
-                    md: `calc(${drawerWidth_md}px + 30px)`,
-                    lg: `calc(${drawerWidth_lg}px + 30px)`,
-                    xl: `calc(${drawerWidth_xl}px + 30px)`,
-                },
-                mt: "100px"
-            }}
-        >
+        <Box>
             <div
                 onMouseLeave={handleMouseLeave}
                 onMouseEnter={handleMouseEnter}
                 onMouseMove={handleMouseMove}
                 style={{
-                    width: "30vw",
+                    width: "40vw",
                     height: "auto",
                     position: "relative",
                     overflow: "hidden"

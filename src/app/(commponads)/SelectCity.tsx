@@ -105,7 +105,6 @@ export default function SelectCity() {
         <Select
           labelId="demo-simple-select-helper-label"
           id="demo-multiple-name"
-          multiple
           value={personName}
           onChange={handleChange}
           input={<OutlinedInput label="Name" />}

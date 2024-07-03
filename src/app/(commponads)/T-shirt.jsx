@@ -39,35 +39,22 @@ const tooltip = (
 );
 
 // jsx☟☟☟☟☟☟☟☟☟☟
-function Tshirt({ src, alt, key, href, name, color, price, description }) {
+function Tshirt({kind, src, alt, id, href, name, color, price, description }) {
   return (
     <>
       <Card
-        key={key}
+        key={id}
         sx={{
           maxHeight: "900px",
-          width: {
-            xs: `calc(100% - ${drawerWidth_xs}px + 210px)`,
-            sm: `calc(100% - ${drawerWidth_sm}px + 210px)`,
-            md: `calc(100% - ${drawerWidth_md}px + 210px)`,
-            lg: `calc(100% - ${drawerWidth_lg}px + 210px)`,
-            xl: `calc(100% - ${drawerWidth_xl}px + 210px)`,
-          },
-          mr: {
-            xs: `calc(${drawerWidth_xs}px - 100px)`,
-            sm: `calc(${drawerWidth_sm}px + 30px)`,
-            md: `calc(${drawerWidth_md}px + 30px)`,
-            lg: `calc(${drawerWidth_lg}px + 30px)`,
-            xl: `calc(${drawerWidth_xl}px + 30px)`,
-          },
-
+          maxWidth: "250px",
+          ml: "2vw",
           mt: "30px",
         }}>
-        <Link href={href}>
+        <Link href={`${kind}/${id}`}>
           <CardActionArea>
             <CardMedia
               component="img"
-              sx={{ height: "220px", objectFit: "cover" }}
+              sx={{ height: "220px", objectFit: "fill" }}
               image={src}
               alt={alt}
             />

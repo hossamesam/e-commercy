@@ -13,19 +13,20 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import logo from '../../../public/logo.png';
+import logo from '/public/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import babyIcon from '../../../public/icons/babyIcon.svg';
+import babyIcon from '@/../../public/icons/babyIcon.svg';
 import manIcon from '../../../public/icons/manIcon.svg';
 import shoseIcon from '../../../public/icons/shoseIcon.svg';
 import underwear from '../../../public/icons/underwear.svg';
 import womanIcon from '../../../public/icons/womanIcon.svg';
-import { Slider } from '@mui/material';
-import SliderMinimumDistance from './slid';
-import SwithchButton from './Themes/SwitchButton';
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import SliderMinimumDistance from '../(commponads)/slid';
+import SwithchButton from '../(commponads)/Themes/SwitchButton';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import products from '../../../public/icons/products.png';
+import RequestPageIcon from '@mui/icons-material/RequestPage';
+import DynamicFeedIcon from '@mui/icons-material/DynamicFeed';
 
 export const [drawerWidth_xs, drawerWidth_sm, drawerWidth_md, drawerWidth_lg, drawerWidth_xl] = [0, 200, 200, 240, 240];
 
@@ -36,9 +37,14 @@ const drawtitle = [
   { "title": 'ملابس رجال', "icon": manIcon, "link": "/man_store" },
   { "title": 'ملابس سيدات', "icon": womanIcon, "link": "/woman_store" },
   { "title": 'ملابس داخلية', "icon": underwear, "link": "/underwear_store" },
-  { "title": 'احذية', "icon": shoseIcon, "link": "/shoses_store" }
-]
+  { "title": 'احذية', "icon": shoseIcon, "link": "/shoses_store" },
 
+]
+const createsTitle = [
+  { "title": 'انشاء منتج جديد', "icon": <AddBoxIcon />, "link": "/create/CreateNewproduct" },
+  { "title": 'منتجات معروضة', "icon": <Image width={30} height={30} src={products} alt="" />, "link": "/MyProducts" },
+  { "title": 'الطلبات', "icon": <RequestPageIcon />, "link": "/Requests" },
+]
 
 export default function PermanentDrawerRight() {
   /////////////////////////mode////////////////
@@ -63,7 +69,7 @@ export default function PermanentDrawerRight() {
         variant="permanent"
       >
         <Toolbar sx={{ height: "130px" }}>
-          <Link href="/">
+          <Link href="/"> 
             <Image src={logo} alt='هدومي' style={{ objectFit: "cover", height: "130px" }} />
           </Link>
         </Toolbar>
@@ -83,10 +89,20 @@ export default function PermanentDrawerRight() {
           ))}
         </List>
         <Divider />
-        <Typography variant="h5" color="initial" sx={{ fontWeight: "bolder", justifyContent: "center", alignItems: "center", display: "flex", mt: "10px" }}>السعر</Typography>
-        <Box sx={{ width: "100%", justifyContent: "center", alignItems: "center", display: "flex" }}>
-          <SliderMinimumDistance />
-        </Box>
+        <List>
+          {createsTitle.map((text, index) => (
+            <Link key={index} href={text.link} >
+              <ListItem key={index} disablePadding   >
+                <ListItemButton>
+                  <ListItemIcon>
+                    {text.icon}
+                  </ListItemIcon>
+                  <ListItemText content='h1' sx={{ textAlign: "right" }} primary={text.title} />
+                </ListItemButton>
+              </ListItem>
+            </Link>
+          ))}
+        </List>
         <Divider />
         <List>
           <ListItem>
