@@ -67,7 +67,7 @@ export default function page(props: ShowProductDataType) {
 
               }}>
               <Typography variant='h4' component={"h4"} sx={{ display: "flex", mt: "15px" }}>
-                150 جنيه
+              {e.price}
               </Typography>
               <SelectCity />
               <Fab
@@ -102,10 +102,10 @@ export default function page(props: ShowProductDataType) {
               boxShadow: "0px 0px 2px #000000",
             }}>
             <Typography variant='h5' margin="10px auto 0 auto">
-              طقم دفاية بيبى شتوى قطيفة
+              {e.description}
             </Typography>
             <Typography variant='h4' component={"h4"} sx={{ display: "flex", mt: "15px" }}>
-              150 جنيه
+              {e.price}
               <Typography
                 variant='h4'
                 component={"h4"}
@@ -124,13 +124,11 @@ export default function page(props: ShowProductDataType) {
             <Typography variant="h5" margin={"15px 0"} color="initial">
               الحجم : 6 شهور
               <br />
-              اللون :
+              اللون : {e.color}
             </Typography>
             <Divider />
             <Typography variant='h3' margin="15px auto 0 auto" > تفاصيل المنتج</Typography>
-            تركيبة المواد100% قطيفة
-            تعليمات العنايةHand Wash Only
-            نوع السحّابPull On
+            {e.description}
           </Typography>
         </Box >
       )

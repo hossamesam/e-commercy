@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
-import Tshirt from "@/app/(commponads)/T-shirt";
-import woman from "@/../public/woman.json";
-import PermanentDrawerRight from "@/app/(commponads)/draw";
-import Header from "@/app/(commponads)/Header";
+import Tshirt from "../../(commponads)/T-shirt";
+import woman from "../../../../public/woman.json";
+import PermanentDrawerRight from "../../(commponads)/draw";
+import Header from "../../(commponads)/Header";
 import { Box } from "@mui/material";
 import {
   drawerWidth_xs,
